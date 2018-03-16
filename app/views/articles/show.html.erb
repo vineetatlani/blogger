@@ -5,3 +5,9 @@
 <%= link_to "Edit this article", edit_article_path(@article) %>
 
 <%= flash.notice %>
+
+<h3>Comments</h3>
+
+<%= render partial: 'comments/form' %>
+
+<%= render partial: 'comments', collection: @article.comments %>
