@@ -9,8 +9,15 @@
 <h3>Comments(<%=@article.comments.size %>)</h3>
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
+<h3>Tags list</h3>
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%=link_to tag.name, tag_path(tag) %>
+  <% end %>
 
 <h3>Post a Comment</h3>
 
 <%= render partial: 'comments/form' %>
+
 
